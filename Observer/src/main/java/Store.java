@@ -5,18 +5,17 @@ public class Store {
 
     private String name;
 
-    private int numbers = 10;
+    private int produtc1 = 0;
 
     public Store(String name) {
         this.name = name;
     }
 
-    public void decreaseNumbers() {
-        if (numbers > 0) {
-            eventManager.notifySubscriber("Ha " + numbers + " disponiveis");
-            numbers--;
-        } else {
-            eventManager.notifySubscriber("Esgotados");
-        }
+    public void alertAboutProduct() {
+        eventManager.notifySubscriber("Ha " + produtc1 + " disponiveis na loja " + name);
+    }
+
+    public void buyStock() {
+        produtc1 = ((int)(Math.random() * 10) + 1);
     }
 }
