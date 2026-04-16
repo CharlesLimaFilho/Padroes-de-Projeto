@@ -1,6 +1,6 @@
 // Subscriber
 
-public class Customer implements EventListener {
+public class Customer implements Observer {
     private String name;
 
     public Customer(String name) {

@@ -1,3 +1,3 @@
-interface Component {
-    public double getPrice();
+public interface Component {
+    double getPrice();
 }

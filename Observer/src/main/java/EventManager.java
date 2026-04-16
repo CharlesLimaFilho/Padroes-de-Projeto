@@ -7,7 +7,7 @@ Note que ele utiliza o metodo definido pela interface para notificar.
 import java.util.ArrayList;
 
 public class EventManager {
-    private ArrayList<Customer> customers = new ArrayList<>();
+    private ArrayList<Observer> customers = new ArrayList<>();
 
     public void addSubscriber(Customer subscriber) {
         if (customers.contains(subscriber)) {
@@ -23,7 +23,7 @@ public class EventManager {
     }
 
     public void notifySubscriber(String context) {
-        for (Customer customer : customers) {
+        for (Observer customer : customers) {
             customer.update(context);
         }
     }
