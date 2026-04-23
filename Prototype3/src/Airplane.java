@@ -20,7 +20,7 @@ public class Airplane implements Prototype {
 
     public Airplane(Airplane target) {
         if (target != null) {
-            this.id = target.id + 1;
+            this.id = IdGenerator.generateID();
             this.motor = (Motor) target.motor.clone();
             this.numSeats = target.numSeats;
             this.seatPrice = target.seatPrice;
@@ -69,7 +69,7 @@ public class Airplane implements Prototype {
     }
 
     @Override
-    public Prototype clone() {
+    public Airplane clone() {
         return new Airplane(this);
     }
 }

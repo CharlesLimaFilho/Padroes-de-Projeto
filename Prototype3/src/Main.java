@@ -2,9 +2,9 @@ public class Main {
     public static void main(String[] args) {
         Motor airplaneMotor = new Motor("Turbofan");
 
-        Airplane airplane1 = new Airplane(1, airplaneMotor, 100, 15.0, "blue");
+        Airplane airplane1 = new Airplane(IdGenerator.generateID(), airplaneMotor, 100, 15.0, "blue");
 
-        Airplane airplane2 = (Airplane) airplane1.clone();
+        Airplane airplane2 = airplane1.clone();
         System.out.println("Airplane " + airplane1.getId() + ": "
                 + airplane1.getMotor().getType() + " - "
                 + airplane1.getNumSeats() + " - "

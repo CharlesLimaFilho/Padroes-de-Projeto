@@ -8,11 +8,11 @@ public class Main {
         Product product2 = new Product("Banana", 12.0);
         Product product3 = new Product("Maca", 12.0);
 
-        box1.addProduct(product1);
-        box2.addProduct(product2);
-        box2.addProduct(product3);
+        box1.addComponent(product1);
+        box2.addComponent(product2);
+        box2.addComponent(product3);
 
-        box1.addProduct(box2);
+        box1.addComponent(box2);
 
         System.out.println(box1.getPrice());
         System.out.println(box2.getPrice());

@@ -8,14 +8,14 @@ public class Main {
         Customer customer2 = new Customer("Maria");
         Customer customer3 = new Customer("Pedro");
 
-        store.eventManager.addSubscriber(customer);
-        store.eventManager.addSubscriber(customer2);
+        store.eventManager.addObserver(customer);
+        store.eventManager.addObserver(customer2);
 
         // Um mesmo cliente nao pode se inscrever duas vezes
-        store.eventManager.addSubscriber(customer);
+        store.eventManager.addObserver(customer);
 
-        store2.eventManager.addSubscriber(customer2);
-        store2.eventManager.addSubscriber(customer3);
+        store2.eventManager.addObserver(customer2);
+        store2.eventManager.addObserver(customer3);
 
         // Lojas sem produtos
         store.alertAboutProduct();
@@ -30,7 +30,7 @@ public class Main {
         store2.alertAboutProduct();
 
         // Removendo cliente
-        store.eventManager.removeSubscriber(customer);
+        store.eventManager.removeObserver(customer);
 
         store.alertAboutProduct();
         store2.alertAboutProduct();

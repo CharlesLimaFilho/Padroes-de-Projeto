@@ -3,28 +3,32 @@
 import java.util.ArrayList;
 
 public class Box implements Component{
-    private ArrayList<Component> products = new ArrayList<>();
+    private ArrayList<Component> components = new ArrayList<>();
 
     @Override
     public double getPrice() {
         double price = 0.5;
 
-        for (Component component : products){
+        for (Component component : components){
             price += component.getPrice();
         }
 
         return price;
     }
 
-    public void addProduct(Component product) {
-        products.add(product);
+    public void addComponent(Component component) {
+        if (components.contains(component)){
+            System.out.println("Componente ja existe");
+        } else {
+            components.add(component);
+        }
     }
 
-    public void removeProduct(Component product) {
-        products.remove(product);
+    public void removeComponent(Component component) {
+        components.remove(component);
     }
 
-    public ArrayList<Component> getProducts() {
-        return products;
+    public ArrayList<Component> getComponents() {
+        return components;
     }
 }

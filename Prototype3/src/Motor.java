@@ -19,7 +19,7 @@ public class Motor implements Prototype {
     }
 
     @Override
-    public Prototype clone() {
+    public Motor clone() {
         return new Motor(this);
     }
 }

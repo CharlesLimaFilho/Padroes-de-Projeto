@@ -7,24 +7,23 @@ Note que ele utiliza o metodo definido pela interface para notificar.
 import java.util.ArrayList;
 
 public class EventManager {
-    private ArrayList<Observer> customers = new ArrayList<>();
+    private ArrayList<Observer> observers = new ArrayList<>();
 
-    public void addSubscriber(Customer subscriber) {
-        if (customers.contains(subscriber)) {
-            System.out.println(subscriber.getName() + " ja esta na lista");
+    public void addObserver(Observer observer) {
+        if (observers.contains(observer)) {
+            System.out.println("Este observador ja esta na lista");
         } else {
-            customers.add(subscriber);
+            observers.add(observer);
         }
     }
 
-    public void removeSubscriber(Customer subscriber) {
-        customers.remove(subscriber);
-        System.out.println(subscriber.getName() + " removido");
+    public void removeObserver(Observer observer) {
+        observers.remove(observer);
     }
 
-    public void notifySubscriber(String context) {
-        for (Observer customer : customers) {
-            customer.update(context);
+    public void notifyObserver(String context) {
+        for (Observer observer : observers) {
+            observer.update(context);
         }
     }
 }
