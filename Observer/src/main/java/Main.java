@@ -1,8 +1,8 @@
 public class Main {
 
     public static void main(String[] args) {
-        Store store = new Store("Casa dos Celulares");
-        Store store2 = new Store("Samsung");
+        Store store = new Store("Loja 1");
+        Store store2 = new Store("Loja 2");
 
         Customer customer = new Customer("Lucas");
         Customer customer2 = new Customer("Maria");
@@ -17,22 +17,18 @@ public class Main {
         store2.eventManager.addObserver(customer2);
         store2.eventManager.addObserver(customer3);
 
-        // Lojas sem produtos
-        store.alertAboutProduct();
-        store2.alertAboutProduct();
-
         // Lojas comprando produtos
+        System.out.println("-----------------------------------------------------------");
         store.buyStock();
         store2.buyStock();
-
-        // Lojam alertando sobre produtos
-        store.alertAboutProduct();
-        store2.alertAboutProduct();
+        System.out.println("-----------------------------------------------------------");
 
         // Removendo cliente
         store.eventManager.removeObserver(customer);
 
-        store.alertAboutProduct();
-        store2.alertAboutProduct();
+        System.out.println("-----------------------------------------------------------");
+        store.buyStock();
+        store2.buyStock();
+        System.out.println("-----------------------------------------------------------");
     }
 }
